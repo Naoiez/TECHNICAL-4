@@ -1,7 +1,0 @@
-# No-install InfinityFree upload
-
-Upload the **contents** of the `TasksForToday` folder directly into your site's `htdocs`: `app/`, `public/`, `fallback/`, `storage/`, `.htaccess`, `index.php`, and the other files. Do not upload the outer folder into `htdocs`. The `htdocs/.htaccess` file routes requests into `public/`. Keep `public/.htaccess` as provided. Do not use `INFINITYFREE_htdocs` (an older alternative layout).
-
-Browse your domain, register a user, create a pending task, then edit it to done. The completion notification is written to `storage/logs/task-completed.log` exactly when a task changes from another status to done. A repeat edit of a done task does not add a second notification. Ensure `storage/` and `storage/logs/` are writable. Data is saved to `storage/tasks-data.json` (the directory is protected by the root rewrite rule).
-
-**Disclosure:** With no Composer `vendor/` folder the site runs a standalone PHP fallback, not Laravel. The included Laravel MVC, migration, Blade, and Mailable files are source for a future full Laravel installation. The fallback uses PHP sessions and JSON data, not Breeze, Eloquent/MySQL, or Laravel Mail. Therefore it does not fully meet a rubric requiring real Breeze authentication, Eloquent data, and a Mailable sent via Laravel's Mail facade. An actual Laravel deployment requires Composer dependencies and database setup prepared outside InfinityFree. Do not present this fallback as a full Laravel implementation.
