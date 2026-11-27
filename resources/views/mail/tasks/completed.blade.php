@@ -1,0 +1,1 @@
+<h1>Task Completed</h1><p>The task <strong>{{ $task->title }}</strong> was marked complete.</p><p>Completed by {{ $task->user->name }}.</p><p><a href="{{ route('tasks.show', $task) }}">View task</a></p>
